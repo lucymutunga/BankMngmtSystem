@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,5 +9,42 @@
 <body>
     <p>Bank Account Management System</p>
     <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bank Account Management System</h1>
+
+    <div class="account">
+      <h2>Savings Account</h2>
+      <p>Account Number: <span id="savingsAccountNumber"></span></p>
+      <p>Account Holder: <span id="savingsAccountHolder"></span></p>
+      <p>Balance: <span id="savingsAccountBalance"></span></p>
+      <input type="number" id="savingsDepositAmount" placeholder="Deposit Amount">
+      <button id="savingsDepositButton">Deposit</button>
+      <input type="number" id="savingsWithdrawAmount" placeholder="Withdraw Amount">
+      <button id="savingsWithdrawButton">Withdraw</button>
+      <button id="savingsCalculateInterestButton">Calculate Interest</button>
+      <p>Interest Amount: <span id="savingsInterestAmount"></span></p>
+    </div>
+
+    <div class="account">
+      <h2>Checking Account</h2>
+      <p>Account Number: <span id="checkingAccountNumber"></span></p>
+      <p>Account Holder: <span id="checkingAccountHolder"></span></p>
+      <p>Balance: <span id="checkingAccountBalance"></span></p>
+      <input type="number" id="checkingDepositAmount" placeholder="Deposit Amount">
+      <button id="checkingDepositButton">Deposit</button>
+      <input type="number" id="checkingWithdrawAmount" placeholder="Withdraw Amount">
+      <button id="checkingWithdrawButton">Withdraw</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

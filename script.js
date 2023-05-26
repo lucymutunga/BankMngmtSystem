@@ -70,8 +70,8 @@ class BankAccount {
   }
   
   // Create instances of each account type
-  const savingsAccount = new SavingsAccount("SA001", "John Doe", 5000, 5);
-  const checkingAccount = new CheckingAccount("CA001", "Jane Smith", 2000, 1000);
+  const savingsAccount = new SavingsAccount("SA001", "Sterling Musa", 5000, 5);
+  const checkingAccount = new CheckingAccount("CA001", "Bright Baraka", 2000, 1000);
   
   // Retrieve account information
   console.log("Savings Account Information:");
@@ -100,6 +100,46 @@ class BankAccount {
   
   // Perform a withdrawal exceeding overdraft limit for checking account
   checkingAccount.withdraw(4000);
+
+const savingsAccountNumberElement = document.getElementById("savingsAccountNumber");
+const savingsAccountHolderElement = document.getElementById("savingsAccountHolder");
+const savingsAccountBalanceElement = document.getElementById("savingsAccountBalance");
+const savingsDepositAmountElement = document.getElementById("savingsDepositAmount");
+const savingsDepositButton = document.getElementById("savingsDepositButton");
+const savingsWithdrawAmountElement = document.getElementById("savingsWithdrawAmount");
+const savingsWithdrawButton = document.getElementById("savingsWithdrawButton");
+const savingsCalculateInterestButton = document.getElementById("savingsCalculateInterestButton");
+const savingsInterestAmountElement = document.getElementById("savingsInterestAmount");
+
+
+savingsAccountNumberElement.textContent = savingsAccount.accountNumber;
+savingsAccountHolderElement.textContent = savingsAccount.accountHolder;
+savingsAccountBalanceElement.textContent = savingsAccount.balance;
+
+// Adding event listeners for Deposit, Withdraw, and Calculate Interest buttons
+savingsDepositButton.addEventListener("click", function() {
+  const amount = parseFloat(savingsDepositAmountElement.value);
+  savingsAccount.deposit(amount);
+  savingsAccountBalanceElement.textContent = savingsAccount.balance;
+  savingsDepositAmountElement.value = "";
+});
+
+savingsWithdrawButton.addEventListener("click", function() {
+  const amount = parseFloat(savingsWithdrawAmountElement.value);
+  savingsAccount.withdraw(amount);
+  savingsAccountBalanceElement.textContent = savingsAccount.balance;
+  savingsWithdrawAmountElement.value = "";
+});
+
+savingsCalculateInterestButton.addEventListener("click", function() {
+  const interestAmount = savingsAccount.calculateInterest();
+  savingsInterestAmountElement.textContent = interestAmount;
+});
+
+
+  
+ 
+
 
 
 
